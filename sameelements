@@ -1,0 +1,51 @@
+//
+// HW6SameElements
+// Kriti Shukla 105109867 Disc 1A
+//
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> A;
+vector<int> B;
+
+int main() {
+    cout << "Enter first sequence (Q when done): " ;
+    
+    int input = 0;
+    
+    for (int i = 0; i < 20; i++)
+    {
+        cin >> input;
+        A.push_back(input);
+    }
+    
+    
+    cin.clear();
+    string discard;
+    cin >> discard;
+    
+    cout << "Enter second sequence (Q when done): " ;
+    
+    int input2 = 0;
+    
+    for (int j = 0; j < 20; j++)
+    {
+        cin >> input2;
+        B.push_back(input2);
+    }
+    
+    sort(A.begin(), A.end());
+    
+    sort(B.begin(), B.end());
+    
+    if (A == B) {
+        cout << "These are: Same" << endl;
+    } else {
+        cout << "These are: Different" << endl;
+    }
+    
+    return 0;
+}
+
