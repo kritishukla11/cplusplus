@@ -1,0 +1,23 @@
+//
+// rectangle.cpp
+// HW1Rectangle
+// Kriti Shukla 105 109 867 Disc 1A
+//
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double length, width, area, peri, diag;
+    cout<<"Enter length and width: ";
+    cin>>length>>width;
+    area=(length*width);
+    peri=2*(length+width);
+    diag=sqrt(length*length+width*width);
+    cout<<"Area: "<<area<<endl;
+    cout<<"Perimeter: "<<peri<<endl;
+    cout<<"Diagonal: "<<diag<<endl;
+    return 0;
+}
