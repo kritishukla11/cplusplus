@@ -1,0 +1,82 @@
+//
+// HW8 Portfolio
+// Kriti Shukla 105 109 867 Disc 1A
+//
+
+#include <iostream>
+#include<iomanip>
+
+using namespace std;
+
+class Portfolio
+{public:
+    double checking, savings;
+    
+    void deposit(double amount, string account)
+    {
+        checking = checking + amount;
+    }
+    
+    void withdraw(double amount, string account)
+    {
+        checking = checking - amount;
+    }
+    
+    void transfer(double amount, string account)
+    {
+        if(account == "S")
+        {
+            checking = checking + amount;
+            savings = savings - amount;
+        }
+        else if(account == "C")
+        {  savings = savings + amount;
+            checking = checking - amount;
+        }
+    }
+
+    void print_balances()
+    {
+        cout<<"Checking Now: "<<fixed<<setprecision(2)<<checking<<endl;
+        cout<<"Savings Now: "<<fixed<<setprecision(0)<<savings;
+        
+    }
+};
+
+int main()
+{
+    Portfolio obj;
+    string account;
+    string action;
+    double amount;
+    
+    obj.checking = 2500;
+    obj.savings = 10000;
+  
+    cout<<"Account: ";
+        cin>>account;
+    
+    cout<<"Action: ";
+        cin>>action;
+    
+    cout<<"Amount: ";
+        cin>>amount;
+    
+    if(action == "W"){
+        obj.withdraw(amount,account);
+    }
+    
+    else if(action == "D"){
+        obj.deposit(amount,account);
+    }
+    
+    else if(action == "T"){
+        obj.transfer(amount,account);
+    }
+    
+    obj.print_balances();
+    
+    cout << endl;
+    
+    return 0;
+}
