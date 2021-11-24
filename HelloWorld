@@ -1,0 +1,16 @@
+//
+//  hello.cpp
+//  HW0HelloWorld
+//  Kriti Shukla 105 109 867
+//
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    cout << "Hello, world!" << endl;
+    cout << "Any fool can write code that \n a computer can understand." << endl;
+    cout << "Good programmers can write code \n that humans can understand." << endl;
+    return 0;
+}
