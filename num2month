@@ -1,0 +1,21 @@
+//
+// num2month.cpp
+// HW1Num2Month
+// Kriti Shukla 105 109 867 Disc 1A
+//
+
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int input;
+    string months="January  February March    April    May      June     July     August   SeptemberOctober  November December ";
+    cout<<"Integer between 1 and 12: ";
+    cin>>input;
+    int output= 9*input - 9;
+    cout<<"Month: "<<months.substr(output,9)<< endl;
+    return 0;
+}
