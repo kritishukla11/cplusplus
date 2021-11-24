@@ -1,0 +1,58 @@
+//
+// HW7CashRegister
+// Kriti Shukla 105 109 867 Disc 1A
+//
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+class CashRegister {
+private:
+    string name;
+    int total_price;
+    int num_items;
+public:
+    CashRegister () {
+        total_price = 0;
+        num_items = 0;
+    }
+    
+    void add_price(int price) {
+        total_price += price;
+        num_items++;
+    }
+    
+    int get_total_price() {
+        return total_price;
+    }
+    
+    double get_num_items() {
+        return num_items;
+    }
+} ;
+
+
+int main() {
+    int total_price = 0;
+    double ind_price = 0;
+    int i = 0;
+
+    
+    cout << "Enter item prices (Q when done): " ;
+    bool done=false;
+    while (!done) {
+        cin >> ind_price;
+        if (cin.fail()) {
+            done=true;
+        } else {
+            total_price += 100*ind_price;
+            i++;
+        }
+    }
+    
+    cout << "Total items: " << i << endl;
+    cout << "Total price in cents: " << total_price << endl;
+    return 0;
+}
