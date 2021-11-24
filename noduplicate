@@ -1,0 +1,49 @@
+//
+// HW5NoDuplicate
+// Kriti Shukla 105 109 867 Disc 1A
+//
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+vector<int> v;
+
+void remove(std::vector<int> &v)
+{
+    auto end = v.end();
+    for (auto it = v.begin(); it != end; ++it) {
+        end = remove(it + 1, end, *it);
+    }
+    
+    v.erase(end, v.end());
+}
+
+int main()
+{
+    cout << "Enter numbers (Q when done): " ;
+    
+    int input = 0;
+    
+    for (int i = 0; i < 10; i++)
+    {
+        cin >> input;
+        v.push_back(input);
+    }
+    
+    remove(v);
+    
+    v.pop_back() ;
+    
+    cout << "No Duplicate: " ;
+    
+    for (auto it = v.cbegin(); it != v.cend(); ++it)
+        cout << *it << ' ';
+    
+    cout << endl;
+    
+    return 0;
+    
+}
