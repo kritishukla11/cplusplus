@@ -1,0 +1,82 @@
+//
+// HW8Quadratic
+// Kriti Shukla 105 109 867
+//
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+class QuadraticEquation{
+    float a, b, c;
+public:
+    QuadraticEquation(float firstCoeff,float secondCoeff, float constant) {
+        a = firstCoeff;
+        b = secondCoeff;
+        c = constant;
+    }
+    float getSolution1();
+    float getSolution2();
+    float getDiscriminant();
+    bool has_solutions();
+    
+};
+
+bool QuadraticEquation::has_solutions(){
+    if(getDiscriminant() < 0){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+float QuadraticEquation::getDiscriminant(){
+    return (float)(b*b-4*a*c);
+}
+
+
+float QuadraticEquation::getSolution1() {
+    float upperPart = (-1*b) + sqrt(getDiscriminant());;
+    float divi = 2*a;
+    float result = upperPart/divi;
+    return result;
+}
+
+
+float QuadraticEquation::getSolution2() {
+    float upperPart = (-1*b) - sqrt(getDiscriminant());;
+    float divi = 2*a;
+    float result = upperPart/divi;
+    return result;
+}
+
+
+int main()
+{
+    float a, b,c;
+    cout<<"Enter a coefficient: ";
+    cin>>a;
+    cout<<"Enter b coefficient: ";
+    cin>>b;
+    cout<<"Enter c coefficient: ";
+    cin>>c;
+    
+    QuadraticEquation quadEqs(a,b,c);
+    
+    if(quadEqs.has_solutions()){
+        if (quadEqs.getSolution1() <= quadEqs.getSolution2()) {
+            cout<<"Solution 1 : "<<quadEqs.getSolution1();
+            cout<<"\nSolution 2 : "<<quadEqs.getSolution2() << endl;
+        }
+        if (quadEqs.getSolution1() > quadEqs.getSolution2()) {
+            cout<<"Solution 1 : "<<quadEqs.getSolution2();
+            cout<<"\nSolution 2 : "<<quadEqs.getSolution1() << endl;
+        }
+            
+    }else{
+        cout<<"\nThis has : No real solutions" << endl;
+    }
+    
+    return 0;
+}
