@@ -1,0 +1,49 @@
+//
+//  main.cpp
+//  HW3MostFrequent
+//
+//  Created by Kriti Shukla on 1/31/21.
+//  Copyright © 2021 Kriti Shukla. All rights reserved.
+//
+
+#include <iostream>
+#include <cmath>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string str;
+    
+    cout << "Enter string: ";
+    cin >> str;
+    {
+        int max = 0;
+        int count = 0;
+        string maxCharacter;
+        for(char q=' ';q<='~';q++)
+            
+        {
+            count = 0;
+            for(int i=0; i<str.length();i++)
+            {
+                if(str[i]==q)
+                    count++;
+            }
+            
+            if(count == max)
+            {
+                maxCharacter += q;
+            }
+            
+            if(count>max)
+            {
+                max=count;
+                maxCharacter=q;
+            }
+        }
+        cout << "Most frequent: " << maxCharacter << endl ;
+    }
+   
+    return 0;
+}
