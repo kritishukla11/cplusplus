@@ -1,0 +1,26 @@
+//
+// order.cpp
+// HW2Order
+// Kriti Shukla 105 109 867 Disc 1A
+//
+
+#include <iostream>
+#include <cmath>
+
+using namespace std
+;
+int main() {
+    int num1 ;
+    int num2 ;
+    int num3 ;
+    cout << "Enter three integers: " ;
+    cin >> num1 >> num2 >> num3 ;
+    if (num1 <= num2 && num2 <= num3) {
+        cout << "This is: In order" << endl;
+    } else if (num1 >= num2 && num2 >= num3) {
+        cout << "This is: In order" << endl;
+    } else {
+        cout << "This is: Not in order" << endl;
+    }
+    return 0;
+}
