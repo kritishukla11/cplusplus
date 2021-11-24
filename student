@@ -1,0 +1,68 @@
+//
+// HW7Student
+// Kriti Shukla 105 109 867 Disc 1A
+//
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int total_score;
+    int num_scores;
+public:
+    Student(string n) {
+       name = n;
+       total_score = 0;
+       num_scores = 0;
+    }
+    
+    string get_name() {
+        return name;
+    }
+    
+    void add_quiz(int score) {
+        total_score += score;
+        num_scores++;
+    }
+    
+    int get_total_score() {
+        return total_score;
+    }
+    
+    double get_average_score() {
+        return total_score/(double)num_scores;
+    }
+};
+
+int main() {
+    string name ;
+    int total_score = 0;
+    int num_scores = 0;
+    int i = 0;
+    int average;
+    
+    cout << "Enter name: " ;
+    cin >> name;
+    
+    cout << "Enter quiz scores (Q when done): " ;
+    bool done=false;
+    while (!done) {
+        cin >> num_scores;
+        if (cin.fail()) {
+            done=true;
+        } else {
+            total_score += num_scores;
+            i++;
+            average = total_score/i;
+        }
+    }
+    
+    cout << "Total score: " << total_score << endl;
+    cout << "Average score: " << average << endl;
+    return 0;
+}
+    
