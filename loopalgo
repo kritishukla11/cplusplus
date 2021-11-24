@@ -1,0 +1,41 @@
+//
+// HW3LoopAlgo
+// Kriti Shukla 105 109 867 Dos 1A
+//
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double minimum=100000000.0;
+    double maximum=0.0;
+    double sum=0.0;
+    double average;
+    double range;
+    int i=0;
+    double value;
+    cout << "Enter numbers (Q when done): " ;
+    bool done=false;
+    while (!done) {
+        cin >> value;
+        if (cin.fail()) {
+            done=true;
+        } else {
+        if (value > maximum)
+            {maximum = value; }
+        if (value < minimum)
+            {minimum = value; }
+        sum += value;
+        i++;
+        average = sum/i;
+        range = maximum - minimum;
+        }
+    }
+    cout << "Average: " << average << endl;
+    cout << "Smallest: " << minimum << endl;
+    cout << "Largest: " << maximum << endl;
+    cout << "Range: " << range << endl;
+    return 0;
+}
