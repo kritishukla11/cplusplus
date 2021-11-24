@@ -1,0 +1,48 @@
+//
+// HW5AltSum
+// Kriti Shukla 105 109 867 Disc 1A
+//
+
+#include <iostream>
+using namespace std;
+
+int read_inputs(double inputs[], int capacity)
+{
+    int current_size = 0;
+    cout << "Enter numbers (Q when done): ";
+    bool more = true;
+    double total = 0;
+    while (more)
+    {
+        double input;
+        cin >> input;
+        if (cin.fail())
+        {
+            more = false;
+        }
+        else if (current_size < capacity)
+        {
+            inputs[current_size] = input;
+            
+            if (current_size % 2 == 0)
+            {
+                total = total + inputs[current_size];
+            }
+            else if (current_size & 2 != 0)
+            {
+                total = total - inputs[current_size];
+            }
+            current_size++;
+        }
+    }
+    return total;
+}
+
+int main()
+{
+    const int capacity = 1000;
+    double values[capacity];
+    int alt_sum = read_inputs(values, capacity);
+    cout << "Alternating Sum: " << alt_sum << endl;
+    return 0;
+}
